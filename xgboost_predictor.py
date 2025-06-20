@@ -1,4 +1,5 @@
 from data_fetcher import fetch_stock_data
+from technical_indicators import add_technical_indicators
 
 
 
