@@ -17,18 +17,19 @@ def get_stock_predictions():
         
         last_row = df.iloc[-1]
 
-        if last_row['RSI'] < 30 and last_row['Close'] > last_row['upper_bb']:
-            results.append({
-                "stock": stock,
-                "direction": "UP",
-                "target_price": round(last_row['Close'] * 1.05)
-            })
+       if last_row['RSI'] < 30 and last_row['Close'] > last_row['upper_bb']:
+    results.append({
+        "stock": stock,
+        "direction": "UP",
+        "target_price": round(last_row['Close'] * 1.05)
+    })
+elif last_row['RSI'] > 70 and last_row['Close'] < last_row['lower_bb']:
+    results.append({
+        "stock": stock,
+        "direction": "DOWN",
+        "target_price": round(last_row['Close'] * 0.95)
+    })
 
-        elif last_row['RSI'] > 70 and last_row['Close'] < last_row['lower_bb']:
-            results.append({
-                "stock": stock,
-                "direction": "DOWN",
-                "target_price": round(last_row['Close'] * 0.95)
-            })
+           
 
     return results
