@@ -7,7 +7,9 @@ st.title("📈 Breakout Signal Dashboard")
 
 try:
     predictions = get_stock_predictions()
-    if predictions:
+
+    # Fixing the ambiguous truth value error
+    if predictions is not None and len(predictions) > 0:
         st.success("Breakout signals generated successfully!")
         for pred in predictions:
             st.write(pred)
