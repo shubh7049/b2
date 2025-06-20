@@ -1,3 +1,7 @@
+from data_fetcher import fetch_stock_data
+
+
+
 def get_stock_predictions():
     stocks = ['TCS.NS', 'INFY.NS', 'RELIANCE.NS']
     results = []
